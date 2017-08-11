@@ -1,0 +1,1 @@
+['TT', 'TC', 'CC', 'CT', 'AA', 'GG', 'GA', 'AG', 'GT', 'AC', 'TG', 'CA', 'GC', 'CG', 'AT', 'ID', 'II', 'DD', 'TA']
