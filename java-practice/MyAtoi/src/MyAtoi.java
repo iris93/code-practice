@@ -5,9 +5,7 @@ public class MyAtoi {
             System.out.println(1);
             return 0;
         }
-
         char[] strList = str.toCharArray();
-        long result = 0;
         int start = 0;
 //        while (Character.isSpaceChar(strList[start])){
         while (strList[start] == ' '){
@@ -17,25 +15,20 @@ public class MyAtoi {
             }else{start++;}
         }
         int numSymbol = 1;
-        int end = 0;
         if (strList[start]=='-'){
             numSymbol = -1;
-            start ++;
-            end = start;
+            start++;
         }else if (strList[start]=='+'){
             start++;
-            end = start;
-        }else if (Character.isDigit(strList[start])){
-            end = start;
-        }else {
-            System.out.println("start"+' '+start);
+        }else if (!Character.isDigit(strList[start])){
             return 0;}
-        while (end<strLength&&Character.isDigit(strList[end])){
-            result = 10*result + strList[end]-'0';
+        long result = 0;
+        while (start<strLength&&Character.isDigit(strList[start])){
+            result = 10*result + strList[start]-'0';
             long temp = result*numSymbol;
             if (temp>Integer.MAX_VALUE){return Integer.MAX_VALUE;}
             else if (temp<Integer.MIN_VALUE){return Integer.MIN_VALUE;}
-            end++;
+            start++;
         }
         result=result*numSymbol;
         return (int)result;
